@@ -1,0 +1,14 @@
+ Time step #       102000
+ Time:    48.99950      seconds
+ Elapsed time in seconds =    5408.89725142403     
+ Elapsed time in hh:mm:ss =      1 h 30 m 08 s
+ Mean elapsed time per time step in seconds =   5.302840442572579E-002
+ Max norm displacement vector U in all slices (m) =   1.4330624E-04
+ Time steps done =       102000  out of       150000
+ Time steps remaining =        48000
+ Estimated remaining time in seconds =    2545.36341243484     
+ Estimated remaining time in hh:mm:ss =      0 h 42 m 25 s
+ Estimated total run time in seconds =    7954.26066385887     
+ Estimated total run time in hh:mm:ss =      2 h 12 m 34 s
+ We have done    68.00000     % of that
+ The run will finish approximately on (in local time): Tue Jan 21, 2020 18:28
