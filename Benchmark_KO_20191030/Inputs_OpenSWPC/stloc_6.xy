@@ -1,0 +1,77 @@
+#                                                    -*- mode:sh -*-
+# stloc.xy
+#
+# station location data by cartesian format.
+# lines starting from '#' and blank lines are omitted. 
+#
+# zsw: controls station depth
+#      'dep': use the depth
+#      'fsb': locate one-grid below from the free surface/sea surface
+#      'obb': locate one-grid below from the groud surface/seafloor
+#      'oba': locate one-grid above from the groud surface/seafloor
+#      'bd{i}' (i=0,...,9) i-th boundary interface
+#
+#    x     y     z      stnm   zsw
+# --------------------------------------
+    0.10   0.0   0.0     p1hm  'obb'
+    0.20   0.0   0.0     p2hm  'obb'
+    0.30   0.0   0.0     p3hm  'obb'
+    0.40   0.0   0.0     p4hm  'obb'
+    0.50   0.0   0.0     p5hm  'obb'
+    0.60   0.0   0.0     p6hm  'obb'
+    0.70   0.0   0.0     p7hm  'obb'
+    0.80   0.0   0.0     p8hm  'obb'
+    0.90   0.0   0.0     p9hm  'obb'
+    1.00   0.0   0.0     p1k  'obb'
+    2.00   0.0   0.0     p2k  'obb'
+    3.00   0.0   0.0     p3k  'obb'
+    4.00   0.0   0.0     p4k  'obb'
+    5.00   0.0   0.0     p5k  'obb'
+    6.00   0.0   0.0     p6k  'obb'
+    7.00   0.0   0.0     p7k  'obb'
+    8.00   0.0   0.0     p8k  'obb'
+    9.00   0.0   0.0     p9k  'obb'
+   10.00   0.0   0.0     p10k  'obb'
+   11.00   0.0   0.0     p11k  'obb'
+   12.00   0.0   0.0     p12k  'obb'
+   13.00   0.0   0.0     p13k  'obb'
+   14.00   0.0   0.0     p14k  'obb'
+   15.00   0.0   0.0     p15k  'obb'
+   16.00   0.0   0.0     p16k  'obb'
+   17.00   0.0   0.0     p17k  'obb'
+   18.00   0.0   0.0     p18k  'obb'
+   19.00   0.0   0.0     p19k  'obb'
+   20.00   0.0   0.0     p20k  'obb'
+   21.00   0.0   0.0     p21k  'obb'
+   22.00   0.0   0.0     p22k  'obb'
+   23.00   0.0   0.0     p23k  'obb'
+   24.00   0.0   0.0     p24k  'obb'
+   25.00   0.0   0.0     p25k  'obb'
+   26.00   0.0   0.0     p26k  'obb'
+   27.00   0.0   0.0     p27k  'obb'
+   28.00   0.0   0.0     p28k  'obb'
+   29.00   0.0   0.0     p29k  'obb'
+   30.00   0.0   0.0     p30k  'obb'
+   31.00   0.0   0.0     p31k  'obb'
+   32.00   0.0   0.0     p32k  'obb'
+   33.00   0.0   0.0     p33k  'obb'
+   34.00   0.0   0.0     p34k  'obb'
+   35.00   0.0   0.0     p35k  'obb'
+   36.00   0.0   0.0     p36k  'obb'
+   37.00   0.0   0.0     p37k  'obb'
+   37.50   0.0   0.0     SEIS  'obb'
+   38.00   0.0   0.0     p38k  'obb'
+   39.00   0.0   0.0     p39k  'obb'
+   40.00   0.0   0.0     p40k  'obb'
+   26.52   26.52   0.0     SEIS2 'obb'
+   50.00   0.0   0.0     p50k  'obb'
+   60.00   0.0   0.0     p60k  'obb'
+   70.0    0.0   0.0     p70k  'obb'
+   80.0    0.0   0.0     p80k  'obb'
+   90.0    0.0   0.0     p90k  'obb'
+  100.0    0.0   0.0     p100k 'obb'
+  150.0    0.0   0.0     p150k 'obb'
+  200.0    0.0   0.0     p200k 'obb'
+  250.0    0.0   0.0     p250k 'obb'
+  300.0    0.0   0.0     p300k 'obb'
+  350.0    0.0   0.0     p350k 'obb'
