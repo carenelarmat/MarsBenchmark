@@ -1,0 +1,1655 @@
+ 
+ **********************************************
+ **** Specfem 3-D Solver - MPI version f90 ****
+ **********************************************
+ 
+ Running Git package version of the code: v2.0.2-2917-g2493619a
+ which is Git commit 2493619affcd8929eb5b827be29acf9bf13d7e36
+ dating From Date:   Mon Nov 11 09:34:28 2019 -0700
+ 
+ 
+ There are          144  MPI processes
+ Processes are numbered from 0 to          143
+ 
+ There is a total of          144  slices
+ 
+  NDIM =            3
+ 
+  NGLLX =            5
+  NGLLY =            5
+  NGLLZ =            5
+ 
+ using single precision for the calculations
+ 
+ smallest and largest possible floating-point numbers are:   1.1754944E-38
+  3.4028235E+38
+ 
+ velocity model:   default 
+ 
+ total acoustic elements    :           0
+ total elastic elements     :      266112
+ total poroelastic elements :           0
+ 
+ ********
+ minimum and maximum number of elements
+ and points in the CUBIT + SCOTCH mesh:
+ 
+ NSPEC_global_min =         1848
+ NSPEC_global_max =         1848
+ NSPEC_global_max / NSPEC_global_min imbalance =    1.000000      = 
+  0.0000000E+00  %
+ NSPEC_global_sum =       266112
+ 
+ NGLOB_global_min =       127821
+ NGLOB_global_max =       127821
+ NGLOB_global_max / NGLOB_global_min imbalance =    1.000000      = 
+  0.0000000E+00  %
+ NGLOB_global_sum =     18406224
+ 
+ If you have elements of a single type (all acoustic, all elastic, all poroelast
+ ic, and without CPML)
+ in the whole mesh, then there should be no significant imbalance in the above n
+ umbers.
+ Otherwise, it is normal to have imbalance in elements and points because the do
+ main decomposer
+ compensates for the different cost of different elements by partitioning them u
+ nevenly among processes.
+ ********
+ 
+ 
+ ********
+ Model: P velocity min,max =    339.0000       5433.000    
+ Model: S velocity min,max =    202.0000       3137.000    
+ Model: rho min,max =    1374.400       2600.000    
+ 
+ Model: Poisson's ratio min,max =   0.2245221      0.3209183    
+ ********
+ 
+ *********************************************
+ *** Verification of simulation parameters ***
+ *********************************************
+ 
+ *** Xmin and Xmax of the model =    526620.8       533715.9    
+ *** Ymin and Ymax of the model =    190308.8       197339.6    
+ *** Zmin and Zmax of the model =   -10000.00      -2700.000    
+ 
+ *** Max GLL point distance =    96.81250    
+ *** Min GLL point distance =   0.8632812    
+ *** Max/min ratio =    112.1448    
+ 
+ *** Max element size =    295.6875    
+ *** Min element size =    5.000000    
+ *** Max/min ratio =    59.13750    
+ 
+ *** Minimum period resolved =   0.3058394    
+ *** Maximum suggested time step =   7.4884389E-04
+ 
+ *** for DT :   5.000000000000000E-004
+ *** Max stability for wave velocities =   0.3338480    
+ 
+ Elapsed time for checking mesh resolution in seconds =   2.037107013165951E-003
+ saving VTK files for Courant number and minimum period
+ 
+ ******************************************
+ There is a total of          144  slices
+ ******************************************
+ 
+ 
+ kd-tree:
+   total data points:         1848
+   theoretical   number of nodes:         3690
+                tree memory size:   0.1126099     MB
+   actual        number of nodes:         3695
+                tree memory size:   0.1127625     MB
+   maximum depth   :           17
+   creation timing :   9.6797943E-04 (s)
+ 
+ 
+ sources:           1
+ 
+ ********************
+  locating sources
+ ********************
+ 
+ reading source information from ./DATA/CMTSOLUTION file
+ 
+ UTM projection:
+   UTM zone:           53
+ 
+ source #            1
+   source located in slice           42
+                  in element         1449
+                  in elastic domain
+ 
+   using moment tensor source: 
+     xi coordinate of source in that element:  -0.947809696777502     
+     eta coordinate of source in that element:   0.394003919565947     
+     gamma coordinate of source in that element:    1.00000000000000     
+ 
+   source time function:
+     using external source time function
+ 
+     time shift:   0.000000000000000E+000  seconds
+ 
+   magnitude of the source:
+        scalar moment M0 =    34997084700014.7       dyne-cm
+     moment magnitude Mw =   -1.67064523020170     
+ 
+   original (requested) position of the source:
+ 
+             latitude:    3.28480000000000     
+            longitude:    135.510000000000     
+ 
+            UTM x:    530169.338889663     
+            UTM y:    192348.344931121     
+           depth:   5.000000000000000E-003  km
+ 
+   position of the source that will be used:
+ 
+            UTM x:    530169.338889663     
+            UTM y:    192348.344931121     
+            depth:   5.000000000000000E-003  km
+                z:   -2705.00000000000     
+ 
+   error in location of the source:   0.0000000E+00  m
+ 
+ 
+ 
+ maximum error in location of the sources:   0.0000000E+00  m
+ 
+ 
+ Elapsed time for detection of sources in seconds =   0.153900746023282     
+ 
+ End of source detection - done
+ 
+ External STF:
+   simulation start time set to zero:   0.000000000000000E+000
+ 
+ 
+ printing the source-time function
+ 
+ receivers:
+ 
+ there are           52  stations in file ./DATA/STATIONS
+ saving            5  stations inside the model in file ./DATA/STATIONS_FILTERED
+ excluding           47  stations located outside the model
+ 
+ 
+ Total number of receivers =            5
+ 
+ 
+ ********************
+  locating receivers
+ ********************
+ 
+ reading receiver information from ./DATA/STATIONS_FILTERED file
+ 
+ 
+ station #            1     D01    KO
+      original latitude:    3.301710    
+      original longitude:    135.5100    
+      original UTM x:    530168.8    
+      original UTM y:    193338.6    
+      original depth:   0.0000000E+00  m
+      horizontal distance km:   0.9902394    
+      target x, y, z:    530168.8       193338.6      -2700.000    
+      closest estimate found:   0.0000000E+00  m away
+ 
+      receiver located in slice           66
+                       in element         1625
+                       in elastic domain
+      at coordinates: 
+      xi    =  -0.975227937852458     
+      eta   =   0.477927438172753     
+      gamma =    1.00000000000000     
+      rotation matrix: 
+      nu1 =    1.000000      0.0000000E+00  0.0000000E+00
+      nu2 =   0.0000000E+00   1.000000      0.0000000E+00
+      nu3 =   0.0000000E+00  0.0000000E+00   1.000000    
+      UTM x:    530168.832509023     
+      UTM y:    193338.584249903     
+      depth:   0.000000000000000E+000  m
+      z:   -2700.00000000000     
+ 
+ 
+ 
+ station #            2     D02    KO
+      original latitude:    3.318610    
+      original longitude:    135.5100    
+      original UTM x:    530168.3    
+      original UTM y:    194328.2    
+      original depth:   0.0000000E+00  m
+      horizontal distance km:    1.979894    
+      target x, y, z:    530168.3       194328.2      -2700.000    
+      closest estimate found:   2.9103830E-11  m away
+ 
+      receiver located in slice           78
+                       in element         1801
+                       in elastic domain
+      at coordinates: 
+      xi    =   -1.00277048557391     
+      eta   =   0.529892116043026     
+      gamma =    1.00000000000000     
+      rotation matrix: 
+      nu1 =    1.000000      0.0000000E+00  0.0000000E+00
+      nu2 =   0.0000000E+00   1.000000      0.0000000E+00
+      nu3 =   0.0000000E+00  0.0000000E+00   1.000000    
+      UTM x:    530168.323832595     
+      UTM y:    194328.238572093     
+      depth:   0.000000000000000E+000  m
+      z:   -2700.00000000000     
+ 
+ 
+ 
+ station #            3     D03    KO
+      original latitude:    3.335520    
+      original longitude:    135.5100    
+      original UTM x:    530167.8    
+      original UTM y:    195318.5    
+      original depth:   0.0000000E+00  m
+      horizontal distance km:    2.970134    
+      target x, y, z:    530167.8       195318.5      -2700.000    
+      closest estimate found:   0.0000000E+00  m away
+ 
+      receiver located in slice          101
+                       in element         1736
+                       in elastic domain
+      at coordinates: 
+      xi    =   0.969530067474356     
+      eta   =   0.613881104688659     
+      gamma =    1.00000000000018     
+      rotation matrix: 
+      nu1 =    1.000000      0.0000000E+00  0.0000000E+00
+      nu2 =   0.0000000E+00   1.000000      0.0000000E+00
+      nu3 =   0.0000000E+00  0.0000000E+00   1.000000    
+      UTM x:    530167.812258434     
+      UTM y:    195318.479089284     
+      depth:   0.000000000000000E+000  m
+      z:   -2700.00000000000     
+ 
+ 
+ 
+ station #            4     D04    KO
+      original latitude:    3.352420    
+      original longitude:    135.5100    
+      original UTM x:    530167.3    
+      original UTM y:    196308.1    
+      original depth:   0.0000000E+00  m
+      horizontal distance km:    3.959790    
+      target x, y, z:    530167.3       196308.1      -2700.000    
+      closest estimate found:   4.5474735E-13  m away
+ 
+      receiver located in slice          125
+                       in element         1656
+                       in elastic domain
+      at coordinates: 
+      xi    =   0.941706484495686     
+      eta   =   0.665911546537950     
+      gamma =   0.999999999999818     
+      rotation matrix: 
+      nu1 =    1.000000      0.0000000E+00  0.0000000E+00
+      nu2 =   0.0000000E+00   1.000000      0.0000000E+00
+      nu3 =   0.0000000E+00  0.0000000E+00   1.000000    
+      UTM x:    530167.298391636     
+      UTM y:    196308.134615262     
+      depth:   4.547473508864641E-013  m
+      z:   -2700.00000000000     
+ 
+ 
+ 
+ station #            5     D05    KO
+      original latitude:    3.369330    
+      original longitude:    135.5100    
+      original UTM x:    530166.8    
+      original UTM y:    197298.4    
+      original depth:   0.0000000E+00  m
+      horizontal distance km:    4.950032    
+      target x, y, z:    530166.8       197298.4      -2700.000    
+      closest estimate found:   0.0000000E+00  m away
+ 
+      receiver located in slice          137
+                       in element         1832
+                       in elastic domain
+      at coordinates: 
+      xi    =   0.913725840315450     
+      eta   =   0.749966670910957     
+      gamma =    1.00000000000000     
+      rotation matrix: 
+      nu1 =    1.000000      0.0000000E+00  0.0000000E+00
+      nu2 =   0.0000000E+00   1.000000      0.0000000E+00
+      nu3 =   0.0000000E+00  0.0000000E+00   1.000000    
+      UTM x:    530166.781624113     
+      UTM y:    197298.376343046     
+      depth:   0.000000000000000E+000  m
+      z:   -2700.00000000000     
+ 
+ 
+ maximum error in location of all the receivers:   2.9103830E-11  m
+ 
+ Elapsed time for receiver detection in seconds =   0.293993819970638     
+ 
+ End of receiver detection - done
+ 
+ source arrays:
+   number of sources is            1
+   size of source array                 =   1.4305115E-03 MB
+                                        =   1.3969839E-06 GB
+ 
+ seismograms:
+   seismograms written by all processes
+   writing out seismograms at every NTSTEP_BETWEEN_OUTPUT_SEISMOS =         5000
+   maximum number of local receivers is            1  in slice           66
+   size of maximum seismogram array       =   5.7220459E-02 MB
+                                          =   5.5879354E-05 GB
+ 
+ 
+ Total number of samples for seismograms =       150000
+ 
+ found a total of            5  receivers in all the slices
+ 
+ 
+ Simulation setup:
+ 
+   no acoustic simulation
+ incorporating elastic simulation
+   no poroelastic simulation
+ 
+ incorporating attenuation using            3  standard linear solids
+   not using attenuation from Olsen et al.
+   no anisotropy
+   no oceans
+   no gravity
+   no movie simulation
+ 
+ 
+   no dynamic faults
+   no kinematic faults
+ 
+   no gravity simulation
+ 
+ 
+ Elapsed time for preparing timerun in seconds =   5.221071199048311E-002
+ 
+ ************
+  time loop
+ ************
+               scheme:         Newmark
+ 
+            time step:   5.0000002E-04  s
+ number of time steps:       150000
+ total simulated time:    75.00000      seconds
+ start time:  0.0000000E+00  seconds
+ 
+ All processes are synchronized before time loop
+ 
+ Starting time iteration loop...
+ 
+ Time step #            5
+ Time:   2.0000001E-03  seconds
+ Elapsed time in seconds =   0.205975408083759     
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =   4.1195083E-02
+ Max norm displacement vector U in all slices (m) =   1.4891027E-15
+ Time steps done =            5  out of       150000
+ Time steps remaining =       149995
+ Estimated remaining time in seconds =    6179.056    
+ Estimated remaining time in hh:mm:ss =      1 h 42 m 59 s
+ Estimated total run time in seconds =    6179.262    
+ Estimated total run time in hh:mm:ss =      1 h 42 m 59 s
+ We have done   3.3333334E-03 % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 01:35
+ ************************************************************
+ **** BEWARE: the above time estimates are not very reliable
+ **** because fewer than 100 iterations have been performed
+ ************************************************************
+ 
+ Time step #         2000
+ Time:   0.9995000      seconds
+ Elapsed time in seconds =    103.582697694073     
+ Elapsed time in hh:mm:ss =      0 h 01 m 43 s
+ Mean elapsed time per time step in seconds =   5.1791348E-02
+ Max norm displacement vector U in all slices (m) =   2.0056288E-04
+ Time steps done =         2000  out of       150000
+ Time steps remaining =       148000
+ Estimated remaining time in seconds =    7665.120    
+ Estimated remaining time in hh:mm:ss =      2 h 07 m 45 s
+ Estimated total run time in seconds =    7768.702    
+ Estimated total run time in hh:mm:ss =      2 h 09 m 28 s
+ We have done    1.333333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:01
+ 
+ Time step #         4000
+ Time:    1.999500      seconds
+ Elapsed time in seconds =    206.862100935075     
+ Elapsed time in hh:mm:ss =      0 h 03 m 26 s
+ Mean elapsed time per time step in seconds =   5.1715527E-02
+ Max norm displacement vector U in all slices (m) =   2.0063853E-04
+ Time steps done =         4000  out of       150000
+ Time steps remaining =       146000
+ Estimated remaining time in seconds =    7550.467    
+ Estimated remaining time in hh:mm:ss =      2 h 05 m 50 s
+ Estimated total run time in seconds =    7757.329    
+ Estimated total run time in hh:mm:ss =      2 h 09 m 17 s
+ We have done    2.666667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:01
+ 
+ 
+ Total number of time steps written:         5000
+ Writing the seismograms in parallel took    1.243638      seconds
+ 
+ Time step #         6000
+ Time:    2.999500      seconds
+ Elapsed time in seconds =    313.156413722085     
+ Elapsed time in hh:mm:ss =      0 h 05 m 13 s
+ Mean elapsed time per time step in seconds =   5.2192736E-02
+ Max norm displacement vector U in all slices (m) =   2.0066868E-04
+ Time steps done =         6000  out of       150000
+ Time steps remaining =       144000
+ Estimated remaining time in seconds =    7515.754    
+ Estimated remaining time in hh:mm:ss =      2 h 05 m 15 s
+ Estimated total run time in seconds =    7828.910    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 28 s
+ We have done    4.000000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #         8000
+ Time:    3.999500      seconds
+ Elapsed time in seconds =    418.269448534003     
+ Elapsed time in hh:mm:ss =      0 h 06 m 58 s
+ Mean elapsed time per time step in seconds =   5.2283682E-02
+ Max norm displacement vector U in all slices (m) =   2.0068897E-04
+ Time steps done =         8000  out of       150000
+ Time steps remaining =       142000
+ Estimated remaining time in seconds =    7424.283    
+ Estimated remaining time in hh:mm:ss =      2 h 03 m 44 s
+ Estimated total run time in seconds =    7842.552    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 42 s
+ We have done    5.333333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        10000
+ Time:    4.999500      seconds
+ Elapsed time in seconds =    523.430182517041     
+ Elapsed time in hh:mm:ss =      0 h 08 m 43 s
+ Mean elapsed time per time step in seconds =   5.2343018E-02
+ Max norm displacement vector U in all slices (m) =   2.0070247E-04
+ Time steps done =        10000  out of       150000
+ Time steps remaining =       140000
+ Estimated remaining time in seconds =    7328.022    
+ Estimated remaining time in hh:mm:ss =      2 h 02 m 08 s
+ Estimated total run time in seconds =    7851.453    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 51 s
+ We have done    6.666667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ 
+ Total number of time steps written:        10000
+ Writing the seismograms in parallel took   9.5144935E-02  seconds
+ 
+ Time step #        12000
+ Time:    5.999500      seconds
+ Elapsed time in seconds =    627.813690858078     
+ Elapsed time in hh:mm:ss =      0 h 10 m 27 s
+ Mean elapsed time per time step in seconds =   5.2317809E-02
+ Max norm displacement vector U in all slices (m) =   2.0071209E-04
+ Time steps done =        12000  out of       150000
+ Time steps remaining =       138000
+ Estimated remaining time in seconds =    7219.857    
+ Estimated remaining time in hh:mm:ss =      2 h 00 m 19 s
+ Estimated total run time in seconds =    7847.671    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 47 s
+ We have done    8.000000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        14000
+ Time:    6.999500      seconds
+ Elapsed time in seconds =    731.368449854082     
+ Elapsed time in hh:mm:ss =      0 h 12 m 11 s
+ Mean elapsed time per time step in seconds =   5.2240603E-02
+ Max norm displacement vector U in all slices (m) =   2.0071832E-04
+ Time steps done =        14000  out of       150000
+ Time steps remaining =       136000
+ Estimated remaining time in seconds =    7104.722    
+ Estimated remaining time in hh:mm:ss =      1 h 58 m 24 s
+ Estimated total run time in seconds =    7836.090    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 36 s
+ We have done    9.333333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ 
+ Total number of time steps written:        15000
+ Writing the seismograms in parallel took   3.7714024E-05  seconds
+ 
+ Time step #        16000
+ Time:    7.999500      seconds
+ Elapsed time in seconds =    835.440102730994     
+ Elapsed time in hh:mm:ss =      0 h 13 m 55 s
+ Mean elapsed time per time step in seconds =   5.2215006E-02
+ Max norm displacement vector U in all slices (m) =   2.0072283E-04
+ Time steps done =        16000  out of       150000
+ Time steps remaining =       134000
+ Estimated remaining time in seconds =    6996.811    
+ Estimated remaining time in hh:mm:ss =      1 h 56 m 36 s
+ Estimated total run time in seconds =    7832.251    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 32 s
+ We have done    10.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        18000
+ Time:    8.999500      seconds
+ Elapsed time in seconds =    939.206766156014     
+ Elapsed time in hh:mm:ss =      0 h 15 m 39 s
+ Mean elapsed time per time step in seconds =   5.2178152E-02
+ Max norm displacement vector U in all slices (m) =   2.0072605E-04
+ Time steps done =        18000  out of       150000
+ Time steps remaining =       132000
+ Estimated remaining time in seconds =    6887.516    
+ Estimated remaining time in hh:mm:ss =      1 h 54 m 47 s
+ Estimated total run time in seconds =    7826.723    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 26 s
+ We have done    12.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        20000
+ Time:    9.999500      seconds
+ Elapsed time in seconds =    1042.69285195100     
+ Elapsed time in hh:mm:ss =      0 h 17 m 22 s
+ Mean elapsed time per time step in seconds =   5.2134644E-02
+ Max norm displacement vector U in all slices (m) =   2.0072820E-04
+ Time steps done =        20000  out of       150000
+ Time steps remaining =       130000
+ Estimated remaining time in seconds =    6777.503    
+ Estimated remaining time in hh:mm:ss =      1 h 52 m 57 s
+ Estimated total run time in seconds =    7820.196    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 20 s
+ We have done    13.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ 
+ Total number of time steps written:        20000
+ Writing the seismograms in parallel took   1.2407649E-02  seconds
+ 
+ Time step #        22000
+ Time:    10.99950      seconds
+ Elapsed time in seconds =    1147.17492400110     
+ Elapsed time in hh:mm:ss =      0 h 19 m 07 s
+ Mean elapsed time per time step in seconds =   5.2144315E-02
+ Max norm displacement vector U in all slices (m) =   2.0072961E-04
+ Time steps done =        22000  out of       150000
+ Time steps remaining =       128000
+ Estimated remaining time in seconds =    6674.472    
+ Estimated remaining time in hh:mm:ss =      1 h 51 m 14 s
+ Estimated total run time in seconds =    7821.647    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 21 s
+ We have done    14.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        24000
+ Time:    11.99950      seconds
+ Elapsed time in seconds =    1250.96146004705     
+ Elapsed time in hh:mm:ss =      0 h 20 m 50 s
+ Mean elapsed time per time step in seconds =   5.2123394E-02
+ Max norm displacement vector U in all slices (m) =   2.0073081E-04
+ Time steps done =        24000  out of       150000
+ Time steps remaining =       126000
+ Estimated remaining time in seconds =    6567.548    
+ Estimated remaining time in hh:mm:ss =      1 h 49 m 27 s
+ Estimated total run time in seconds =    7818.509    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 18 s
+ We have done    16.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:01
+ 
+ 
+ Total number of time steps written:        25000
+ Writing the seismograms in parallel took   3.8831960E-05  seconds
+ 
+ Time step #        26000
+ Time:    12.99950      seconds
+ Elapsed time in seconds =    1355.69875888806     
+ Elapsed time in hh:mm:ss =      0 h 22 m 35 s
+ Mean elapsed time per time step in seconds =   5.2142259E-02
+ Max norm displacement vector U in all slices (m) =   2.0073142E-04
+ Time steps done =        26000  out of       150000
+ Time steps remaining =       124000
+ Estimated remaining time in seconds =    6465.640    
+ Estimated remaining time in hh:mm:ss =      1 h 47 m 45 s
+ Estimated total run time in seconds =    7821.339    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 21 s
+ We have done    17.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        28000
+ Time:    13.99950      seconds
+ Elapsed time in seconds =    1460.76374757907     
+ Elapsed time in hh:mm:ss =      0 h 24 m 20 s
+ Mean elapsed time per time step in seconds =   5.2170135E-02
+ Max norm displacement vector U in all slices (m) =   2.0073204E-04
+ Time steps done =        28000  out of       150000
+ Time steps remaining =       122000
+ Estimated remaining time in seconds =    6364.756    
+ Estimated remaining time in hh:mm:ss =      1 h 46 m 04 s
+ Estimated total run time in seconds =    7825.520    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 25 s
+ We have done    18.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        30000
+ Time:    14.99950      seconds
+ Elapsed time in seconds =    1565.38137647603     
+ Elapsed time in hh:mm:ss =      0 h 26 m 05 s
+ Mean elapsed time per time step in seconds =   5.2179378E-02
+ Max norm displacement vector U in all slices (m) =   2.0073251E-04
+ Time steps done =        30000  out of       150000
+ Time steps remaining =       120000
+ Estimated remaining time in seconds =    6261.525    
+ Estimated remaining time in hh:mm:ss =      1 h 44 m 21 s
+ Estimated total run time in seconds =    7826.907    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 26 s
+ We have done    20.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ 
+ Total number of time steps written:        30000
+ Writing the seismograms in parallel took    1.735566      seconds
+ 
+ Time step #        32000
+ Time:    15.99950      seconds
+ Elapsed time in seconds =    1672.12129300099     
+ Elapsed time in hh:mm:ss =      0 h 27 m 52 s
+ Mean elapsed time per time step in seconds =   5.2253790E-02
+ Max norm displacement vector U in all slices (m) =   2.0073254E-04
+ Time steps done =        32000  out of       150000
+ Time steps remaining =       118000
+ Estimated remaining time in seconds =    6165.947    
+ Estimated remaining time in hh:mm:ss =      1 h 42 m 45 s
+ Estimated total run time in seconds =    7838.068    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 38 s
+ We have done    21.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        34000
+ Time:    16.99950      seconds
+ Elapsed time in seconds =    1776.86458634504     
+ Elapsed time in hh:mm:ss =      0 h 29 m 36 s
+ Mean elapsed time per time step in seconds =   5.2260723E-02
+ Max norm displacement vector U in all slices (m) =   2.0073290E-04
+ Time steps done =        34000  out of       150000
+ Time steps remaining =       116000
+ Estimated remaining time in seconds =    6062.244    
+ Estimated remaining time in hh:mm:ss =      1 h 41 m 02 s
+ Estimated total run time in seconds =    7839.108    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 39 s
+ We have done    22.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ 
+ Total number of time steps written:        35000
+ Writing the seismograms in parallel took    2.314030      seconds
+ 
+ Time step #        36000
+ Time:    17.99950      seconds
+ Elapsed time in seconds =    1884.49737197103     
+ Elapsed time in hh:mm:ss =      0 h 31 m 24 s
+ Mean elapsed time per time step in seconds =   5.2347150E-02
+ Max norm displacement vector U in all slices (m) =   2.0073268E-04
+ Time steps done =        36000  out of       150000
+ Time steps remaining =       114000
+ Estimated remaining time in seconds =    5967.575    
+ Estimated remaining time in hh:mm:ss =      1 h 39 m 27 s
+ Estimated total run time in seconds =    7852.072    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 52 s
+ We have done    24.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        38000
+ Time:    18.99950      seconds
+ Elapsed time in seconds =    1990.17760341102     
+ Elapsed time in hh:mm:ss =      0 h 33 m 10 s
+ Mean elapsed time per time step in seconds =   5.2373096E-02
+ Max norm displacement vector U in all slices (m) =   2.0073315E-04
+ Time steps done =        38000  out of       150000
+ Time steps remaining =       112000
+ Estimated remaining time in seconds =    5865.787    
+ Estimated remaining time in hh:mm:ss =      1 h 37 m 45 s
+ Estimated total run time in seconds =    7855.964    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 55 s
+ We have done    25.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        40000
+ Time:    19.99950      seconds
+ Elapsed time in seconds =    2095.35894557904     
+ Elapsed time in hh:mm:ss =      0 h 34 m 55 s
+ Mean elapsed time per time step in seconds =   5.2383974E-02
+ Max norm displacement vector U in all slices (m) =   2.0073290E-04
+ Time steps done =        40000  out of       150000
+ Time steps remaining =       110000
+ Estimated remaining time in seconds =    5762.237    
+ Estimated remaining time in hh:mm:ss =      1 h 36 m 02 s
+ Estimated total run time in seconds =    7857.596    
+ Estimated total run time in hh:mm:ss =      2 h 10 m 57 s
+ We have done    26.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        40000
+ Writing the seismograms in parallel took    2.294354      seconds
+ 
+ Time step #        42000
+ Time:    20.99950      seconds
+ Elapsed time in seconds =    2203.51741327799     
+ Elapsed time in hh:mm:ss =      0 h 36 m 43 s
+ Mean elapsed time per time step in seconds =   5.2464701E-02
+ Max norm displacement vector U in all slices (m) =   2.0073297E-04
+ Time steps done =        42000  out of       150000
+ Time steps remaining =       108000
+ Estimated remaining time in seconds =    5666.188    
+ Estimated remaining time in hh:mm:ss =      1 h 34 m 26 s
+ Estimated total run time in seconds =    7869.705    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 09 s
+ We have done    28.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:02
+ 
+ Time step #        44000
+ Time:    21.99950      seconds
+ Elapsed time in seconds =    2309.07783013908     
+ Elapsed time in hh:mm:ss =      0 h 38 m 29 s
+ Mean elapsed time per time step in seconds =   5.2479040E-02
+ Max norm displacement vector U in all slices (m) =   2.0073305E-04
+ Time steps done =        44000  out of       150000
+ Time steps remaining =       106000
+ Estimated remaining time in seconds =    5562.778    
+ Estimated remaining time in hh:mm:ss =      1 h 32 m 42 s
+ Estimated total run time in seconds =    7871.856    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 11 s
+ We have done    29.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        45000
+ Writing the seismograms in parallel took    2.456152      seconds
+ 
+ Time step #        46000
+ Time:    22.99950      seconds
+ Elapsed time in seconds =    2416.55699607299     
+ Elapsed time in hh:mm:ss =      0 h 40 m 16 s
+ Mean elapsed time per time step in seconds =   5.2533846E-02
+ Max norm displacement vector U in all slices (m) =   2.0073346E-04
+ Time steps done =        46000  out of       150000
+ Time steps remaining =       104000
+ Estimated remaining time in seconds =    5463.520    
+ Estimated remaining time in hh:mm:ss =      1 h 31 m 03 s
+ Estimated total run time in seconds =    7880.077    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 20 s
+ We have done    30.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        48000
+ Time:    23.99950      seconds
+ Elapsed time in seconds =    2521.72274157405     
+ Elapsed time in hh:mm:ss =      0 h 42 m 01 s
+ Mean elapsed time per time step in seconds =   5.2535892E-02
+ Max norm displacement vector U in all slices (m) =   2.0073274E-04
+ Time steps done =        48000  out of       150000
+ Time steps remaining =       102000
+ Estimated remaining time in seconds =    5358.661    
+ Estimated remaining time in hh:mm:ss =      1 h 29 m 18 s
+ Estimated total run time in seconds =    7880.384    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 20 s
+ We have done    32.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        50000
+ Time:    24.99950      seconds
+ Elapsed time in seconds =    2626.32658772403     
+ Elapsed time in hh:mm:ss =      0 h 43 m 46 s
+ Mean elapsed time per time step in seconds =   5.2526534E-02
+ Max norm displacement vector U in all slices (m) =   2.0073318E-04
+ Time steps done =        50000  out of       150000
+ Time steps remaining =       100000
+ Estimated remaining time in seconds =    5252.653    
+ Estimated remaining time in hh:mm:ss =      1 h 27 m 32 s
+ Estimated total run time in seconds =    7878.980    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 18 s
+ We have done    33.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        50000
+ Writing the seismograms in parallel took   0.3873623      seconds
+ 
+ Time step #        52000
+ Time:    25.99950      seconds
+ Elapsed time in seconds =    2732.06832971703     
+ Elapsed time in hh:mm:ss =      0 h 45 m 32 s
+ Mean elapsed time per time step in seconds =   5.2539777E-02
+ Max norm displacement vector U in all slices (m) =   2.0073302E-04
+ Time steps done =        52000  out of       150000
+ Time steps remaining =        98000
+ Estimated remaining time in seconds =    5148.898    
+ Estimated remaining time in hh:mm:ss =      1 h 25 m 48 s
+ Estimated total run time in seconds =    7880.966    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 20 s
+ We have done    34.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        54000
+ Time:    26.99950      seconds
+ Elapsed time in seconds =    2837.15188580507     
+ Elapsed time in hh:mm:ss =      0 h 47 m 17 s
+ Mean elapsed time per time step in seconds =   5.2539852E-02
+ Max norm displacement vector U in all slices (m) =   2.0073309E-04
+ Time steps done =        54000  out of       150000
+ Time steps remaining =        96000
+ Estimated remaining time in seconds =    5043.826    
+ Estimated remaining time in hh:mm:ss =      1 h 24 m 03 s
+ Estimated total run time in seconds =    7880.978    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 20 s
+ We have done    36.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        55000
+ Writing the seismograms in parallel took   0.6748108      seconds
+ 
+ Time step #        56000
+ Time:    27.99950      seconds
+ Elapsed time in seconds =    2942.95571408607     
+ Elapsed time in hh:mm:ss =      0 h 49 m 02 s
+ Mean elapsed time per time step in seconds =   5.2552782E-02
+ Max norm displacement vector U in all slices (m) =   2.0073322E-04
+ Time steps done =        56000  out of       150000
+ Time steps remaining =        94000
+ Estimated remaining time in seconds =    4939.961    
+ Estimated remaining time in hh:mm:ss =      1 h 22 m 19 s
+ Estimated total run time in seconds =    7882.917    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 22 s
+ We have done    37.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        58000
+ Time:    28.99950      seconds
+ Elapsed time in seconds =    3048.10443754401     
+ Elapsed time in hh:mm:ss =      0 h 50 m 48 s
+ Mean elapsed time per time step in seconds =   5.2553523E-02
+ Max norm displacement vector U in all slices (m) =   2.0073295E-04
+ Time steps done =        58000  out of       150000
+ Time steps remaining =        92000
+ Estimated remaining time in seconds =    4834.924    
+ Estimated remaining time in hh:mm:ss =      1 h 20 m 34 s
+ Estimated total run time in seconds =    7883.029    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 23 s
+ We have done    38.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        60000
+ Time:    29.99950      seconds
+ Elapsed time in seconds =    3153.17667854705     
+ Elapsed time in hh:mm:ss =      0 h 52 m 33 s
+ Mean elapsed time per time step in seconds =   5.2552946E-02
+ Max norm displacement vector U in all slices (m) =   2.0073289E-04
+ Time steps done =        60000  out of       150000
+ Time steps remaining =        90000
+ Estimated remaining time in seconds =    4729.765    
+ Estimated remaining time in hh:mm:ss =      1 h 18 m 49 s
+ Estimated total run time in seconds =    7882.942    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 22 s
+ We have done    40.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        60000
+ Writing the seismograms in parallel took   0.4312194      seconds
+ 
+ Time step #        62000
+ Time:    30.99950      seconds
+ Elapsed time in seconds =    3258.87815691403     
+ Elapsed time in hh:mm:ss =      0 h 54 m 18 s
+ Mean elapsed time per time step in seconds =   5.2562550E-02
+ Max norm displacement vector U in all slices (m) =   2.0073305E-04
+ Time steps done =        62000  out of       150000
+ Time steps remaining =        88000
+ Estimated remaining time in seconds =    4625.504    
+ Estimated remaining time in hh:mm:ss =      1 h 17 m 05 s
+ Estimated total run time in seconds =    7884.383    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 24 s
+ We have done    41.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        64000
+ Time:    31.99950      seconds
+ Elapsed time in seconds =    3363.72675164801     
+ Elapsed time in hh:mm:ss =      0 h 56 m 03 s
+ Mean elapsed time per time step in seconds =   5.2558232E-02
+ Max norm displacement vector U in all slices (m) =   2.0073303E-04
+ Time steps done =        64000  out of       150000
+ Time steps remaining =        86000
+ Estimated remaining time in seconds =    4520.008    
+ Estimated remaining time in hh:mm:ss =      1 h 15 m 20 s
+ Estimated total run time in seconds =    7883.734    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 23 s
+ We have done    42.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        65000
+ Writing the seismograms in parallel took   0.3414188      seconds
+ 
+ Time step #        66000
+ Time:    32.99950      seconds
+ Elapsed time in seconds =    3469.37063553010     
+ Elapsed time in hh:mm:ss =      0 h 57 m 49 s
+ Mean elapsed time per time step in seconds =   5.2566223E-02
+ Max norm displacement vector U in all slices (m) =   2.0073302E-04
+ Time steps done =        66000  out of       150000
+ Time steps remaining =        84000
+ Estimated remaining time in seconds =    4415.562    
+ Estimated remaining time in hh:mm:ss =      1 h 13 m 35 s
+ Estimated total run time in seconds =    7884.933    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 24 s
+ We have done    44.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        68000
+ Time:    33.99950      seconds
+ Elapsed time in seconds =    3574.41560956708     
+ Elapsed time in hh:mm:ss =      0 h 59 m 34 s
+ Mean elapsed time per time step in seconds =   5.2564934E-02
+ Max norm displacement vector U in all slices (m) =   2.0073316E-04
+ Time steps done =        68000  out of       150000
+ Time steps remaining =        82000
+ Estimated remaining time in seconds =    4310.325    
+ Estimated remaining time in hh:mm:ss =      1 h 11 m 50 s
+ Estimated total run time in seconds =    7884.740    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 24 s
+ We have done    45.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        70000
+ Time:    34.99950      seconds
+ Elapsed time in seconds =    3679.47153191804     
+ Elapsed time in hh:mm:ss =      1 h 01 m 19 s
+ Mean elapsed time per time step in seconds =   5.2563880E-02
+ Max norm displacement vector U in all slices (m) =   2.0073270E-04
+ Time steps done =        70000  out of       150000
+ Time steps remaining =        80000
+ Estimated remaining time in seconds =    4205.110    
+ Estimated remaining time in hh:mm:ss =      1 h 10 m 05 s
+ Estimated total run time in seconds =    7884.582    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 24 s
+ We have done    46.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        70000
+ Writing the seismograms in parallel took   0.3129508      seconds
+ 
+ Time step #        72000
+ Time:    35.99950      seconds
+ Elapsed time in seconds =    3785.31099119503     
+ Elapsed time in hh:mm:ss =      1 h 03 m 05 s
+ Mean elapsed time per time step in seconds =   5.2573763E-02
+ Max norm displacement vector U in all slices (m) =   2.0073322E-04
+ Time steps done =        72000  out of       150000
+ Time steps remaining =        78000
+ Estimated remaining time in seconds =    4100.753    
+ Estimated remaining time in hh:mm:ss =      1 h 08 m 20 s
+ Estimated total run time in seconds =    7886.064    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 26 s
+ We have done    48.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        74000
+ Time:    36.99950      seconds
+ Elapsed time in seconds =    3890.68171522103     
+ Elapsed time in hh:mm:ss =      1 h 04 m 50 s
+ Mean elapsed time per time step in seconds =   5.2576780E-02
+ Max norm displacement vector U in all slices (m) =   2.0073296E-04
+ Time steps done =        74000  out of       150000
+ Time steps remaining =        76000
+ Estimated remaining time in seconds =    3995.835    
+ Estimated remaining time in hh:mm:ss =      1 h 06 m 35 s
+ Estimated total run time in seconds =    7886.517    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 26 s
+ We have done    49.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        75000
+ Writing the seismograms in parallel took   0.3308912      seconds
+ 
+ Time step #        76000
+ Time:    37.99950      seconds
+ Elapsed time in seconds =    3996.40423796803     
+ Elapsed time in hh:mm:ss =      1 h 06 m 36 s
+ Mean elapsed time per time step in seconds =   5.2584264E-02
+ Max norm displacement vector U in all slices (m) =   2.0073327E-04
+ Time steps done =        76000  out of       150000
+ Time steps remaining =        74000
+ Estimated remaining time in seconds =    3891.236    
+ Estimated remaining time in hh:mm:ss =      1 h 04 m 51 s
+ Estimated total run time in seconds =    7887.640    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 27 s
+ We have done    50.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        78000
+ Time:    38.99950      seconds
+ Elapsed time in seconds =    4101.60966429801     
+ Elapsed time in hh:mm:ss =      1 h 08 m 21 s
+ Mean elapsed time per time step in seconds =   5.2584738E-02
+ Max norm displacement vector U in all slices (m) =   2.0073311E-04
+ Time steps done =        78000  out of       150000
+ Time steps remaining =        72000
+ Estimated remaining time in seconds =    3786.101    
+ Estimated remaining time in hh:mm:ss =      1 h 03 m 06 s
+ Estimated total run time in seconds =    7887.711    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 27 s
+ We have done    52.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        80000
+ Time:    39.99950      seconds
+ Elapsed time in seconds =    4206.86042711604     
+ Elapsed time in hh:mm:ss =      1 h 10 m 06 s
+ Mean elapsed time per time step in seconds =   5.2585755E-02
+ Max norm displacement vector U in all slices (m) =   2.0073315E-04
+ Time steps done =        80000  out of       150000
+ Time steps remaining =        70000
+ Estimated remaining time in seconds =    3681.003    
+ Estimated remaining time in hh:mm:ss =      1 h 01 m 21 s
+ Estimated total run time in seconds =    7887.863    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 27 s
+ We have done    53.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        80000
+ Writing the seismograms in parallel took   0.6954131      seconds
+ 
+ Time step #        82000
+ Time:    40.99950      seconds
+ Elapsed time in seconds =    4313.13902642007     
+ Elapsed time in hh:mm:ss =      1 h 11 m 53 s
+ Mean elapsed time per time step in seconds =   5.2599255E-02
+ Max norm displacement vector U in all slices (m) =   2.0073284E-04
+ Time steps done =        82000  out of       150000
+ Time steps remaining =        68000
+ Estimated remaining time in seconds =    3576.750    
+ Estimated remaining time in hh:mm:ss =      0 h 59 m 36 s
+ Estimated total run time in seconds =    7889.889    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 29 s
+ We have done    54.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        84000
+ Time:    41.99950      seconds
+ Elapsed time in seconds =    4418.18466435408     
+ Elapsed time in hh:mm:ss =      1 h 13 m 38 s
+ Mean elapsed time per time step in seconds =   5.2597437E-02
+ Max norm displacement vector U in all slices (m) =   2.0073330E-04
+ Time steps done =        84000  out of       150000
+ Time steps remaining =        66000
+ Estimated remaining time in seconds =    3471.431    
+ Estimated remaining time in hh:mm:ss =      0 h 57 m 51 s
+ Estimated total run time in seconds =    7889.615    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 29 s
+ We have done    56.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        85000
+ Writing the seismograms in parallel took   0.4455647      seconds
+ 
+ Time step #        86000
+ Time:    42.99950      seconds
+ Elapsed time in seconds =    4523.96933968808     
+ Elapsed time in hh:mm:ss =      1 h 15 m 23 s
+ Mean elapsed time per time step in seconds =   5.2604295E-02
+ Max norm displacement vector U in all slices (m) =   2.0073286E-04
+ Time steps done =        86000  out of       150000
+ Time steps remaining =        64000
+ Estimated remaining time in seconds =    3366.675    
+ Estimated remaining time in hh:mm:ss =      0 h 56 m 06 s
+ Estimated total run time in seconds =    7890.644    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 30 s
+ We have done    57.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        88000
+ Time:    43.99950      seconds
+ Elapsed time in seconds =    4629.32856003603     
+ Elapsed time in hh:mm:ss =      1 h 17 m 09 s
+ Mean elapsed time per time step in seconds =   5.2606005E-02
+ Max norm displacement vector U in all slices (m) =   2.0073319E-04
+ Time steps done =        88000  out of       150000
+ Time steps remaining =        62000
+ Estimated remaining time in seconds =    3261.573    
+ Estimated remaining time in hh:mm:ss =      0 h 54 m 21 s
+ Estimated total run time in seconds =    7890.901    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 30 s
+ We have done    58.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        90000
+ Time:    44.99950      seconds
+ Elapsed time in seconds =    4734.30522586510     
+ Elapsed time in hh:mm:ss =      1 h 18 m 54 s
+ Mean elapsed time per time step in seconds =   5.2603390E-02
+ Max norm displacement vector U in all slices (m) =   2.0073273E-04
+ Time steps done =        90000  out of       150000
+ Time steps remaining =        60000
+ Estimated remaining time in seconds =    3156.203    
+ Estimated remaining time in hh:mm:ss =      0 h 52 m 36 s
+ Estimated total run time in seconds =    7890.509    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 30 s
+ We have done    60.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        90000
+ Writing the seismograms in parallel took   0.3558159      seconds
+ 
+ Time step #        92000
+ Time:    45.99950      seconds
+ Elapsed time in seconds =    4840.11382836406     
+ Elapsed time in hh:mm:ss =      1 h 20 m 40 s
+ Mean elapsed time per time step in seconds =   5.2609932E-02
+ Max norm displacement vector U in all slices (m) =   2.0073322E-04
+ Time steps done =        92000  out of       150000
+ Time steps remaining =        58000
+ Estimated remaining time in seconds =    3051.376    
+ Estimated remaining time in hh:mm:ss =      0 h 50 m 51 s
+ Estimated total run time in seconds =    7891.490    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 31 s
+ We have done    61.33333     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        94000
+ Time:    46.99950      seconds
+ Elapsed time in seconds =    4945.23874481604     
+ Elapsed time in hh:mm:ss =      1 h 22 m 25 s
+ Mean elapsed time per time step in seconds =   5.2608922E-02
+ Max norm displacement vector U in all slices (m) =   2.0073296E-04
+ Time steps done =        94000  out of       150000
+ Time steps remaining =        56000
+ Estimated remaining time in seconds =    2946.100    
+ Estimated remaining time in hh:mm:ss =      0 h 49 m 06 s
+ Estimated total run time in seconds =    7891.338    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 31 s
+ We have done    62.66667     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:        95000
+ Writing the seismograms in parallel took   0.5998259      seconds
+ 
+ Time step #        96000
+ Time:    47.99950      seconds
+ Elapsed time in seconds =    5051.17815962003     
+ Elapsed time in hh:mm:ss =      1 h 24 m 11 s
+ Mean elapsed time per time step in seconds =   5.2616440E-02
+ Max norm displacement vector U in all slices (m) =   2.0073316E-04
+ Time steps done =        96000  out of       150000
+ Time steps remaining =        54000
+ Estimated remaining time in seconds =    2841.288    
+ Estimated remaining time in hh:mm:ss =      0 h 47 m 21 s
+ Estimated total run time in seconds =    7892.466    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 32 s
+ We have done    64.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #        98000
+ Time:    48.99950      seconds
+ Elapsed time in seconds =    5156.71410446707     
+ Elapsed time in hh:mm:ss =      1 h 25 m 56 s
+ Mean elapsed time per time step in seconds =   5.2619532E-02
+ Max norm displacement vector U in all slices (m) =   2.0073277E-04
+ Time steps done =        98000  out of       150000
+ Time steps remaining =        52000
+ Estimated remaining time in seconds =    2736.216    
+ Estimated remaining time in hh:mm:ss =      0 h 45 m 36 s
+ Estimated total run time in seconds =    7892.930    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 32 s
+ We have done    65.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ Time step #       100000
+ Time:    49.99950      seconds
+ Elapsed time in seconds =    5262.22937952902     
+ Elapsed time in hh:mm:ss =      1 h 27 m 42 s
+ Mean elapsed time per time step in seconds =   5.2622292E-02
+ Max norm displacement vector U in all slices (m) =   2.0073351E-04
+ Time steps done =       100000  out of       150000
+ Time steps remaining =        50000
+ Estimated remaining time in seconds =    2631.115    
+ Estimated remaining time in hh:mm:ss =      0 h 43 m 51 s
+ Estimated total run time in seconds =    7893.344    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    66.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       100000
+ Writing the seismograms in parallel took   0.1753311      seconds
+ 
+ Time step #       102000
+ Time:    50.99950      seconds
+ Elapsed time in seconds =    5367.57712617901     
+ Elapsed time in hh:mm:ss =      1 h 29 m 27 s
+ Mean elapsed time per time step in seconds =   5.2623305E-02
+ Max norm displacement vector U in all slices (m) =   2.0073274E-04
+ Time steps done =       102000  out of       150000
+ Time steps remaining =        48000
+ Estimated remaining time in seconds =    2525.919    
+ Estimated remaining time in hh:mm:ss =      0 h 42 m 05 s
+ Estimated total run time in seconds =    7893.496    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    68.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       104000
+ Time:    51.99950      seconds
+ Elapsed time in seconds =    5472.19090295502     
+ Elapsed time in hh:mm:ss =      1 h 31 m 12 s
+ Mean elapsed time per time step in seconds =   5.2617222E-02
+ Max norm displacement vector U in all slices (m) =   2.0073344E-04
+ Time steps done =       104000  out of       150000
+ Time steps remaining =        46000
+ Estimated remaining time in seconds =    2420.392    
+ Estimated remaining time in hh:mm:ss =      0 h 40 m 20 s
+ Estimated total run time in seconds =    7892.583    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 32 s
+ We have done    69.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       105000
+ Writing the seismograms in parallel took   0.5648792      seconds
+ 
+ Time step #       106000
+ Time:    52.99950      seconds
+ Elapsed time in seconds =    5578.06912355509     
+ Elapsed time in hh:mm:ss =      1 h 32 m 58 s
+ Mean elapsed time per time step in seconds =   5.2623294E-02
+ Max norm displacement vector U in all slices (m) =   2.0073265E-04
+ Time steps done =       106000  out of       150000
+ Time steps remaining =        44000
+ Estimated remaining time in seconds =    2315.425    
+ Estimated remaining time in hh:mm:ss =      0 h 38 m 35 s
+ Estimated total run time in seconds =    7893.494    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    70.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ Time step #       108000
+ Time:    53.99950      seconds
+ Elapsed time in seconds =    5683.69339835702     
+ Elapsed time in hh:mm:ss =      1 h 34 m 43 s
+ Mean elapsed time per time step in seconds =   5.2626792E-02
+ Max norm displacement vector U in all slices (m) =   2.0073324E-04
+ Time steps done =       108000  out of       150000
+ Time steps remaining =        42000
+ Estimated remaining time in seconds =    2210.325    
+ Estimated remaining time in hh:mm:ss =      0 h 36 m 50 s
+ Estimated total run time in seconds =    7894.019    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    72.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       110000
+ Time:    54.99950      seconds
+ Elapsed time in seconds =    5789.11449422000     
+ Elapsed time in hh:mm:ss =      1 h 36 m 29 s
+ Mean elapsed time per time step in seconds =   5.2628312E-02
+ Max norm displacement vector U in all slices (m) =   2.0073300E-04
+ Time steps done =       110000  out of       150000
+ Time steps remaining =        40000
+ Estimated remaining time in seconds =    2105.133    
+ Estimated remaining time in hh:mm:ss =      0 h 35 m 05 s
+ Estimated total run time in seconds =    7894.247    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    73.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       110000
+ Writing the seismograms in parallel took   0.4725520      seconds
+ 
+ Time step #       112000
+ Time:    55.99950      seconds
+ Elapsed time in seconds =    5894.90884777310     
+ Elapsed time in hh:mm:ss =      1 h 38 m 14 s
+ Mean elapsed time per time step in seconds =   5.2633114E-02
+ Max norm displacement vector U in all slices (m) =   2.0073338E-04
+ Time steps done =       112000  out of       150000
+ Time steps remaining =        38000
+ Estimated remaining time in seconds =    2000.058    
+ Estimated remaining time in hh:mm:ss =      0 h 33 m 20 s
+ Estimated total run time in seconds =    7894.967    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    74.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       114000
+ Time:    56.99950      seconds
+ Elapsed time in seconds =    5999.56856826204     
+ Elapsed time in hh:mm:ss =      1 h 39 m 59 s
+ Mean elapsed time per time step in seconds =   5.2627794E-02
+ Max norm displacement vector U in all slices (m) =   2.0073296E-04
+ Time steps done =       114000  out of       150000
+ Time steps remaining =        36000
+ Estimated remaining time in seconds =    1894.601    
+ Estimated remaining time in hh:mm:ss =      0 h 31 m 34 s
+ Estimated total run time in seconds =    7894.169    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    76.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ 
+ Total number of time steps written:       115000
+ Writing the seismograms in parallel took   0.4360082      seconds
+ 
+ Time step #       116000
+ Time:    57.99950      seconds
+ Elapsed time in seconds =    6105.26679029106     
+ Elapsed time in hh:mm:ss =      1 h 41 m 45 s
+ Mean elapsed time per time step in seconds =   5.2631609E-02
+ Max norm displacement vector U in all slices (m) =   2.0073337E-04
+ Time steps done =       116000  out of       150000
+ Time steps remaining =        34000
+ Estimated remaining time in seconds =    1789.475    
+ Estimated remaining time in hh:mm:ss =      0 h 29 m 49 s
+ Estimated total run time in seconds =    7894.742    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    77.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       118000
+ Time:    58.99950      seconds
+ Elapsed time in seconds =    6210.99693139608     
+ Elapsed time in hh:mm:ss =      1 h 43 m 30 s
+ Mean elapsed time per time step in seconds =   5.2635565E-02
+ Max norm displacement vector U in all slices (m) =   2.0073287E-04
+ Time steps done =       118000  out of       150000
+ Time steps remaining =        32000
+ Estimated remaining time in seconds =    1684.338    
+ Estimated remaining time in hh:mm:ss =      0 h 28 m 04 s
+ Estimated total run time in seconds =    7895.335    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 35 s
+ We have done    78.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       120000
+ Time:    59.99950      seconds
+ Elapsed time in seconds =    6315.74918961606     
+ Elapsed time in hh:mm:ss =      1 h 45 m 15 s
+ Mean elapsed time per time step in seconds =   5.2631244E-02
+ Max norm displacement vector U in all slices (m) =   2.0073321E-04
+ Time steps done =       120000  out of       150000
+ Time steps remaining =        30000
+ Estimated remaining time in seconds =    1578.937    
+ Estimated remaining time in hh:mm:ss =      0 h 26 m 18 s
+ Estimated total run time in seconds =    7894.687    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    80.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       120000
+ Writing the seismograms in parallel took   0.2171328      seconds
+ 
+ Time step #       122000
+ Time:    60.99950      seconds
+ Elapsed time in seconds =    6421.23841418105     
+ Elapsed time in hh:mm:ss =      1 h 47 m 01 s
+ Mean elapsed time per time step in seconds =   5.2633103E-02
+ Max norm displacement vector U in all slices (m) =   2.0073290E-04
+ Time steps done =       122000  out of       150000
+ Time steps remaining =        28000
+ Estimated remaining time in seconds =    1473.727    
+ Estimated remaining time in hh:mm:ss =      0 h 24 m 33 s
+ Estimated total run time in seconds =    7894.965    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    81.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ Time step #       124000
+ Time:    61.99950      seconds
+ Elapsed time in seconds =    6526.03392560501     
+ Elapsed time in hh:mm:ss =      1 h 48 m 46 s
+ Mean elapsed time per time step in seconds =   5.2629307E-02
+ Max norm displacement vector U in all slices (m) =   2.0073315E-04
+ Time steps done =       124000  out of       150000
+ Time steps remaining =        26000
+ Estimated remaining time in seconds =    1368.362    
+ Estimated remaining time in hh:mm:ss =      0 h 22 m 48 s
+ Estimated total run time in seconds =    7894.396    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    82.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       125000
+ Writing the seismograms in parallel took   0.2867832      seconds
+ 
+ Time step #       126000
+ Time:    62.99950      seconds
+ Elapsed time in seconds =    6631.06287096499     
+ Elapsed time in hh:mm:ss =      1 h 50 m 31 s
+ Mean elapsed time per time step in seconds =   5.2627482E-02
+ Max norm displacement vector U in all slices (m) =   2.0073313E-04
+ Time steps done =       126000  out of       150000
+ Time steps remaining =        24000
+ Estimated remaining time in seconds =    1263.060    
+ Estimated remaining time in hh:mm:ss =      0 h 21 m 03 s
+ Estimated total run time in seconds =    7894.123    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 34 s
+ We have done    84.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       128000
+ Time:    63.99950      seconds
+ Elapsed time in seconds =    6736.07514703099     
+ Elapsed time in hh:mm:ss =      1 h 52 m 16 s
+ Mean elapsed time per time step in seconds =   5.2625585E-02
+ Max norm displacement vector U in all slices (m) =   2.0073296E-04
+ Time steps done =       128000  out of       150000
+ Time steps remaining =        22000
+ Estimated remaining time in seconds =    1157.763    
+ Estimated remaining time in hh:mm:ss =      0 h 19 m 17 s
+ Estimated total run time in seconds =    7893.838    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    85.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       130000
+ Time:    64.99950      seconds
+ Elapsed time in seconds =    6841.22274080000     
+ Elapsed time in hh:mm:ss =      1 h 54 m 01 s
+ Mean elapsed time per time step in seconds =   5.2624792E-02
+ Max norm displacement vector U in all slices (m) =   2.0073337E-04
+ Time steps done =       130000  out of       150000
+ Time steps remaining =        20000
+ Estimated remaining time in seconds =    1052.496    
+ Estimated remaining time in hh:mm:ss =      0 h 17 m 32 s
+ Estimated total run time in seconds =    7893.719    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    86.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ 
+ Total number of time steps written:       130000
+ Writing the seismograms in parallel took   3.8343016E-05  seconds
+ 
+ Time step #       132000
+ Time:    65.99950      seconds
+ Elapsed time in seconds =    6945.76685492799     
+ Elapsed time in hh:mm:ss =      1 h 55 m 45 s
+ Mean elapsed time per time step in seconds =   5.2619446E-02
+ Max norm displacement vector U in all slices (m) =   2.0073306E-04
+ Time steps done =       132000  out of       150000
+ Time steps remaining =        18000
+ Estimated remaining time in seconds =    947.1500    
+ Estimated remaining time in hh:mm:ss =      0 h 15 m 47 s
+ Estimated total run time in seconds =    7892.917    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 32 s
+ We have done    88.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       134000
+ Time:    66.99950      seconds
+ Elapsed time in seconds =    7050.22791636910     
+ Elapsed time in hh:mm:ss =      1 h 57 m 30 s
+ Mean elapsed time per time step in seconds =   5.2613642E-02
+ Max norm displacement vector U in all slices (m) =   2.0073319E-04
+ Time steps done =       134000  out of       150000
+ Time steps remaining =        16000
+ Estimated remaining time in seconds =    841.8182    
+ Estimated remaining time in hh:mm:ss =      0 h 14 m 01 s
+ Estimated total run time in seconds =    7892.046    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 32 s
+ We have done    89.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       135000
+ Writing the seismograms in parallel took    1.415902      seconds
+ 
+ Time step #       136000
+ Time:    67.99950      seconds
+ Elapsed time in seconds =    7156.65963781008     
+ Elapsed time in hh:mm:ss =      1 h 59 m 16 s
+ Mean elapsed time per time step in seconds =   5.2622497E-02
+ Max norm displacement vector U in all slices (m) =   2.0073325E-04
+ Time steps done =       136000  out of       150000
+ Time steps remaining =        14000
+ Estimated remaining time in seconds =    736.7150    
+ Estimated remaining time in hh:mm:ss =      0 h 12 m 16 s
+ Estimated total run time in seconds =    7893.375    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    90.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       138000
+ Time:    68.99950      seconds
+ Elapsed time in seconds =    7262.13961980608     
+ Elapsed time in hh:mm:ss =      2 h 01 m 02 s
+ Mean elapsed time per time step in seconds =   5.2624200E-02
+ Max norm displacement vector U in all slices (m) =   2.0073328E-04
+ Time steps done =       138000  out of       150000
+ Time steps remaining =        12000
+ Estimated remaining time in seconds =    631.4904    
+ Estimated remaining time in hh:mm:ss =      0 h 10 m 31 s
+ Estimated total run time in seconds =    7893.630    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    92.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ Time step #       140000
+ Time:    69.99950      seconds
+ Elapsed time in seconds =    7367.65222096909     
+ Elapsed time in hh:mm:ss =      2 h 02 m 47 s
+ Mean elapsed time per time step in seconds =   5.2626088E-02
+ Max norm displacement vector U in all slices (m) =   2.0073277E-04
+ Time steps done =       140000  out of       150000
+ Time steps remaining =        10000
+ Estimated remaining time in seconds =    526.2609    
+ Estimated remaining time in hh:mm:ss =      0 h 08 m 46 s
+ Estimated total run time in seconds =    7893.913    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 33 s
+ We have done    93.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       140000
+ Writing the seismograms in parallel took    1.179547      seconds
+ 
+ Time step #       142000
+ Time:    70.99950      seconds
+ Elapsed time in seconds =    7474.54148041108     
+ Elapsed time in hh:mm:ss =      2 h 04 m 34 s
+ Mean elapsed time per time step in seconds =   5.2637614E-02
+ Max norm displacement vector U in all slices (m) =   2.0073330E-04
+ Time steps done =       142000  out of       150000
+ Time steps remaining =         8000
+ Estimated remaining time in seconds =    421.1009    
+ Estimated remaining time in hh:mm:ss =      0 h 07 m 01 s
+ Estimated total run time in seconds =    7895.643    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 35 s
+ We have done    94.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       144000
+ Time:    71.99950      seconds
+ Elapsed time in seconds =    7579.99180151499     
+ Elapsed time in hh:mm:ss =      2 h 06 m 19 s
+ Mean elapsed time per time step in seconds =   5.2638832E-02
+ Max norm displacement vector U in all slices (m) =   2.0073290E-04
+ Time steps done =       144000  out of       150000
+ Time steps remaining =         6000
+ Estimated remaining time in seconds =    315.8330    
+ Estimated remaining time in hh:mm:ss =      0 h 05 m 15 s
+ Estimated total run time in seconds =    7895.825    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 35 s
+ We have done    96.00000     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ 
+ Total number of time steps written:       145000
+ Writing the seismograms in parallel took   0.2260671      seconds
+ 
+ Time step #       146000
+ Time:    72.99950      seconds
+ Elapsed time in seconds =    7685.69000062905     
+ Elapsed time in hh:mm:ss =      2 h 08 m 05 s
+ Mean elapsed time per time step in seconds =   5.2641712E-02
+ Max norm displacement vector U in all slices (m) =   2.0073344E-04
+ Time steps done =       146000  out of       150000
+ Time steps remaining =         4000
+ Estimated remaining time in seconds =    210.5668    
+ Estimated remaining time in hh:mm:ss =      0 h 03 m 30 s
+ Estimated total run time in seconds =    7896.257    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 36 s
+ We have done    97.33334     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:04
+ 
+ Time step #       148000
+ Time:    73.99950      seconds
+ Elapsed time in seconds =    7791.09009859606     
+ Elapsed time in hh:mm:ss =      2 h 09 m 51 s
+ Mean elapsed time per time step in seconds =   5.2642502E-02
+ Max norm displacement vector U in all slices (m) =   2.0073271E-04
+ Time steps done =       148000  out of       150000
+ Time steps remaining =         2000
+ Estimated remaining time in seconds =    105.2850    
+ Estimated remaining time in hh:mm:ss =      0 h 01 m 45 s
+ Estimated total run time in seconds =    7896.375    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 36 s
+ We have done    98.66666     % of that
+ The run will finish approximately on (in local time): Wed Jan 22, 2020 02:03
+ 
+ Time step #       150000
+ Time:    74.99950      seconds
+ Elapsed time in seconds =    7896.30698712601     
+ Elapsed time in hh:mm:ss =      2 h 11 m 36 s
+ Mean elapsed time per time step in seconds =   5.2642047E-02
+ Max norm displacement vector U in all slices (m) =   2.0073334E-04
+ Time steps done =       150000  out of       150000
+ Time steps remaining =            0
+ Estimated remaining time in seconds =   0.0000000E+00
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =    7896.307    
+ Estimated total run time in hh:mm:ss =      2 h 11 m 36 s
+ We have done    100.0000     % of that
+ 
+ 
+ Total number of time steps written:       150000
+ Writing the seismograms in parallel took   2.4165027E-05  seconds
+ 
+ Time-Loop Complete. Timing info:
+ Total elapsed time in seconds =    7896.56013425207     
+ Total elapsed time in hh:mm:ss =      2 h 11 m 36 s
+ 
+ End of the simulation
+ 
