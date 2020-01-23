@@ -15,9 +15,9 @@ Finite difference/spectral element method codes benchmark for 1D Mars model with
     .SPECFEM3D: format 'xyz'; It is a smooth tomography model with even sampling and linear interpolation. *This is the choice for the moment to facilitate the issue of parameterization.*
 
 **Benchmarking failed because:
-(1) Velocity models differ
-(2) STF matter 
-(3) code parameterization (bm is a versatile format but so requires quality control) 
+-Velocity models differ
+-STF matter 
+-code parameterization (bm is a versatile format but so requires quality control) 
 **
 
     
