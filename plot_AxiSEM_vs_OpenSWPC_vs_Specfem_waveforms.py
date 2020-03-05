@@ -76,10 +76,10 @@ for i in range(0,5):
 
     #Specfem---------------------------------------------------------------
     #st = obspy.read("./SEM_RESULT_TOMOBM_KUPP/D{:02d}.KO.FXZ.semv.sac".format(i+1))
-    st = obspy.read("./SEM_RESULT_TOMO2/D{:02d}.KO.FXZ.semv.sac".format(i+1))
+    st = obspy.read("./SEM_RESULT_TOMO_FAR/D{:02d}.KO.FXZ.semv.sac".format(i+1))
     tr = st[0]
     tr.filter('bandpass',freqmin=freqmin,freqmax=freqmax,corners=corners,zerophase=zerophase)
-    time = np.linspace(0,tr.stats.npts*tr.stats.delta,tr.stats.npts)
+    time = np.linspace(0,tr.stats.npts*tr.stats.delta+tr.stats.sac.b,tr.stats.npts)
     axes[i].plot(time,tr.data,color='C2',label='Specfem3D')
 
     #Axis Params-----------------------------------------------------------

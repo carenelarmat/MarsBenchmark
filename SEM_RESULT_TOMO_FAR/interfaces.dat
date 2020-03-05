@@ -1,0 +1,25 @@
+# number of interfaces
+ 3
+#
+# We describe each interface below, structured as a 2D-grid, with several parameters : 
+# number of points along XI and ETA, minimal XI ETA coordinates 
+# and spacing between points which must be constant.
+# Then the records contain the Z coordinates of the NXI x NETA points.
+#
+# interface number 1 (1km interface)
+# SUPPRESS_UTM_PROJECTION  NXI  NETA LONG_MIN   LAT_MIN    SPACING_XI SPACING_ETA
+ .false.                    2  2  -180.d0  -90.d0 360.d0    180.d0
+ Mars_1km_flat.SEM
+# interface number 2 (80m interface)
+# SUPPRESS_UTM_PROJECTION  NXI  NETA LONG_MIN   LAT_MIN    SPACING_XI SPACING_ETA
+ .false.                    2  2  -180.d0  -90.d0 360.d0    180.d0
+ Mars_80m_flat.SEM
+# interface number 3 (Mars HRSC DEM ~160m)
+# SUPPRESS_UTM_PROJECTION  NXI  NETA LONG_MIN   LAT_MIN    SPACING_XI SPACING_ETA
+ .false.                    2  2  -180.d0  -90.d0 360.d0    180.d0
+ Mars_topo_flat.SEM
+# for each layer, we give the number of spectral elements in the vertical direction
+# layer number 1 (bottom to top)
+ 46
+ 13
+ 3
