@@ -8,6 +8,30 @@ Finite difference/spectral element method codes benchmark for 1D Mars model with
 **(2) STF matters** STF have a specific frequency content which can have big effect on the appareant group velocity of surfac waves. 
 
 
+**Modelings in this directory:**
+
+**OpenSWPC:** 
+
+    Benchmark_KO_20191030. Velocity model entered as a 'lhm' model. 
+    
+**AxiSEM:** 
+
+    AxiSEM_SEISShallow_2H_erf: Fist velocity model
+    
+    AxisSEM_SEIS_BM_v2: model for the benchmark
+    
+**AxiSEM3D:**
+
+    AsiSEM3D_Ben010820: matches with first AxiSEM model
+    
+**SPECFEM3D:**
+
+    SEM_RESULT_TOMOBM_ERF: Another velocity model, STF is an error function (like AxiSEM)
+    
+    SEM_RESULT_TOMOBM_KUPP: Another velocity model. STF is a Kupper wavelet
+    
+    SEM_RESULT_TOMO_FAT: model for the benchmkark
+
 ## Notes:
 
 
