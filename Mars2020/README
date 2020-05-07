@@ -1,0 +1,14 @@
+# Parameters for the modeling of the entry of Mars2020
+
+Coordinates:
+Landing site (lat, long): 18.4	77.5
+InSight (lat, long): 4.5	135.6
+
+Source:
+-First a source at the surface corresponding to the CMBD: 75kg arriving at 4000m/s. 
+
+Atmosphere: 
+-Model computed using the MCD (Climate model for Mars) by Lucie Rolland (University of Nice). 
+
+Solid Mars model:
+-ETH crust.
